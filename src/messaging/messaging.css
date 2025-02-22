@@ -1,0 +1,173 @@
+.messageContainer{
+    display:none;
+    padding:20px 40px;
+    background-color:var(--background);
+    height:85vh;
+
+}
+.message2sections{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left:10rem;
+
+}
+.messageContainer.active{
+    display:block;
+}
+.leftMessage{
+    background-color:var(--white);
+
+}
+.search{
+    border:1px solid var(--gray);
+    padding:.3rem;
+    border-radius:.3rem;
+    max-width:250px;
+    gap:2rem;
+
+}
+.search input{
+    border:none;
+    padding:5px;
+    width:220px;
+    margin-right:5px;
+}
+
+.headLeftMessage{
+    display:flex;
+    align-items: center;
+    gap:.4rem;
+}
+.headLeftMessage span{
+    color:var(--black);
+    background-color:var(--light-blue);
+    padding:5px;
+    border-radius:30%;
+}
+.user{
+    display:flex;
+    align-items: center;
+    gap:1.2rem;
+}
+.desc p{
+    margin-top:-1.5rem;
+}
+.state{
+    position:absolute;
+    left:15.5rem;
+    border:3px solid var(--white);
+}
+.state.online{
+    background-color:var(--blue);
+    border-radius:50%;
+    width:10px;
+    height:10px;
+}
+.state.offline{
+    background-color:var(--red);
+    border-radius:50%;
+    width:10px;
+    height:10px;
+}
+.state2{
+    position:absolute;
+    left:-10.5rem;
+    border:3px solid var(--white);
+}
+.state2.online{
+    background-color:var(--blue);
+    border-radius:50%;
+    width:10px;
+    height:10px;
+}
+.state2.offline{
+    background-color:var(--red);
+    border-radius:50%;
+    width:10px;
+    height:10px;
+}
+.user img{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+.detUser p{
+  margin-top:-1.5rem;
+}
+.headRightMessage{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.rightHeadRM{
+    display:flex;
+    align-items: center;
+    gap:1.5rem;
+}
+.rightHeadRM i{
+    background-color:var(--light-blue);
+    color:var(--blue);
+    padding:15px;
+    border-radius:50%;
+
+}
+.rightHeadRM i:hover{
+    background-color:var(--blue);
+    color:var(--white);
+    cursor:pointer;
+}
+.chat img{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+.chat .response{
+    background-color:var(--white);
+    padding:1rem;
+    border-radius: 5px;
+    border:none;
+
+}
+.chat .reply{
+    background-color:var(--blue);
+    color:var(--white);
+    padding:1rem;
+    border:none;
+}
+.chat span{
+    align-items:left;
+}
+.bottomRightMessage input{
+    width:500px;
+    padding:.5rem;
+    margin-top:1rem;
+    border:none;
+}
+.rightMessage{
+    padding-right:20rem;
+    background-color:var(--white);
+    height:80vh;
+    width:300vw;
+    align-items: center;
+    margin-right:20rem;
+    align-items: center;
+    justify-content: center;
+
+}
+.leftMessage{
+    padding-right:5rem;
+    margin-right:1rem;
+    background-color:var(--white);
+    height:80vh;
+    align-items: center;
+}
+.detUser p{
+    color:#000;
+}
+.texting{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
