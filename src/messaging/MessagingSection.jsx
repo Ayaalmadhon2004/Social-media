@@ -6,14 +6,7 @@ import messagePerson2 from "../Assets/Images/02-person3.jpg";
 import messagePerson3 from "../Assets/Images/07-DLMl_mTI.jpg";
 import messagePerson4 from "../Assets/Images/person5.jpg";
 import messagePerson5 from "../Assets/Images/person6.jpg";
-
-const messageUsers = [
-  { id: 1, img: messagePerson1, name: "France Geo", desc: "France sent a photo", state: "online" },
-  { id: 2, img: messagePerson2, name: "Lori Ferguson", desc: "You missed a call from Lori", state: "offline" },
-  { id: 3, img: messagePerson3, name: "Samo Lanson", desc: "France sent a photo", state: "online" },
-  { id: 4, img: messagePerson4, name: "Judy Naven", desc: "France sent a photo", state: "offline" },
-  { id: 5, img: messagePerson5, name: "Dennis Barry", desc: "France sent a photo", state: "online" }
-];
+import messageUsers from "../data/data";
 
 const chats = [
   { id: 1, img: messagePerson1, response1: "Hello dear sir, how are you?", timeR1: "12:40", reply: "I am good, thanks!", timeRe2: "12:41" },
@@ -24,10 +17,14 @@ const chats = [
 ];
 
 const MessagingSection = ({ message }) => {
-  const [search, setSearch] = useState(""); // 🔹 Store search input
-  const [filteredUsers, setFilteredUsers] = useState(messageUsers); // 🔹 Store filtered users
-  const [selectedChat, setSelectedChat] = useState(null); // 🔹 Store selected chat
+  // State for search input, filtered users, selected chat, current input text, and submitted text.
+  const [search, setSearch] = useState("");
+  const [filteredUsers, setFilteredUsers] = useState(messageUsers);
+  const [selectedChat, setSelectedChat] = useState(null);
+  const [type, setType] = useState("");
+  const [submit, setSubmit] = useState("");
 
+  // Handler for search input
   const searchHandler = (e) => {
     const searchValue = e.target.value.toLowerCase();
     setSearch(searchValue);
@@ -38,29 +35,50 @@ const MessagingSection = ({ message }) => {
     }
   };
 
+  // Handler for selecting a chat user
   const chooseChat = (user) => {
     const chat = chats.find(chat => chat.id === user.id);
     setSelectedChat(chat);
   };
 
+  // Handler for keydown event on the message input
+  // Note: we check for "Enter" (with a capital E)
+  const submitChange = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      setSubmit(type);
+      setType("");
+    }
+  };
+
   return (
     <div className={`messageContainer container ${message ? "active" : ""}`}>
       <div className="message2sections">
-
+        {/* Left section: List of users */}
         <div className="leftMessage">
           <div className="headLeftMessage">
             <h3>Active chats</h3>
-            <span>{messageUsers.length}</span>
+            <span>{filteredUsers.length}</span>
             <i className="fa-solid fa-pen-to-square"></i>
           </div>
           <div className="search">
-            <input type="search" placeholder="Search for Chats" value={search} onChange={searchHandler} />
+            <input 
+              type="search" 
+              placeholder="Search for Chats" 
+              value={search} 
+              onChange={searchHandler} 
+            />
             <i className="fa-solid fa-magnifying-glass"></i>
           </div>
           <div className="usersForSearch">
             {filteredUsers.length > 0 ? (
               filteredUsers.map((user) => (
-                <div className="user" key={user.id} onClick={() => chooseChat(user)} style={{ cursor: "pointer" }}>
+                <div 
+                  className="user" 
+                  key={user.id} 
+                  onClick={() => chooseChat(user)} 
+                  style={{ cursor: "pointer" }}
+                >
                   <div className="img">
                     <div className={`state ${user.state === "online" ? "online" : "offline"}`}></div>
                     <img src={user.img} alt={user.name} />
@@ -76,7 +94,8 @@ const MessagingSection = ({ message }) => {
             )}
           </div>
         </div>
-
+        
+        {/* Right section: Chat window */}
         <div className="rightMessage">
           {selectedChat ? (
             <>
@@ -103,12 +122,21 @@ const MessagingSection = ({ message }) => {
                   <span>{selectedChat.timeR1}</span>
                   <p className="reply">{selectedChat.reply}</p>
                   <span>{selectedChat.timeRe2}</span>
+                  {/* Display submitted message only if it exists */}
+                  {submit && <p>{submit}</p>}
                 </div>
                 <div className="texting">
-                <input type="text" placeholder="Type a message" />
-                <i class="fa-solid fa-face-smile"></i>
-                <i class="fa-solid fa-link"></i>
-                <i class="fa-solid fa-paper-plane"></i>
+                  {/* Text input for message typing with onKeyDown to handle "Enter" key */}
+                  <input 
+                    type="text" 
+                    placeholder="Type a message" 
+                    value={type} 
+                    onChange={(e) => setType(e.target.value)} 
+                    onKeyDown={submitChange}
+                  />
+                  <i className="fa-solid fa-face-smile"></i>
+                  <i className="fa-solid fa-link"></i>
+                  <i className="fa-solid fa-paper-plane"></i>
                 </div>
               </div>
             </>
@@ -116,7 +144,6 @@ const MessagingSection = ({ message }) => {
             <p style={{ textAlign: "center", marginTop: "50px" }}>Select a user to start chatting</p>
           )}
         </div>
-
       </div>
     </div>
   );

@@ -146,15 +146,24 @@
     border:none;
 }
 .rightMessage{
-    padding-right:20rem;
     background-color:var(--white);
     height:80vh;
     width:300vw;
     align-items: center;
-    margin-right:20rem;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 
+}
+.headRightMessage{
+   display:flex;
+   align-items: center;
+   justify-content: space-between;
+   padding:20px 100px;
+}
+.headRightMessage .rightHeadRM{
+    margin-left:30rem;
+}
+.bottomRightMessage{
+    padding-left:5rem;
 }
 .leftMessage{
     padding-right:5rem;

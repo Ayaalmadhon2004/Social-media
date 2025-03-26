@@ -3,6 +3,9 @@ import "./navbar.css";
 import notPic from "../Assets/Images/07-DLMl_mTI.jpg";
 import notPic2 from "../Assets/Images/02-person3.jpg"; 
 import notPic3 from "../Assets/Images/01-person2.jpg"
+import mainPhoto from "../Assets/Images/01-person2.jpg";
+import { Outlet, Link } from "react-router-dom";
+
 
 const Noti = [
   {
@@ -32,32 +35,33 @@ const Noti = [
 ];
 const Navbar = ({ toggleSetting , toggleMessage }) => {
   const [not, setNot] = useState(false);
+  const [img,setImg]=useState(false);
 
   const notChange = () => {
     setNot(!not);
   };
+
   
 
   return (
     <div className="navbarContainer container">
       <div className="rightNav">
-        <i className="fa-solid fa-headphones"></i>
-        <input type="text" placeholder="search" />
+        <h2><Link to="/header">Social Media</Link></h2>
       </div>
       <div className="centerNav">
         <ul className="list">
-          <li>Demo</li>
-          <li>Pages</li>
-          <li>Account</li>
-          <li>My Network</li>
+          <li><a href="">Demo</a></li>
+          <li><a href="">Pages</a></li>
+          <li><a href="">Account</a></li>
+          <li><a href="">My Network</a></li>
         </ul>
       </div>
       <div className="leftNav icons">
         <div className="chatIcon">
-          <i className="fa-regular fa-comment" onClick={toggleMessage}></i>
+        <Link to="/messages"><i className="fa-regular fa-comment" onClick={toggleMessage}></i></Link>
         </div>
         <div className="settingIcon">
-          <i className="fa-solid fa-gear" onClick={toggleSetting} ></i>
+        <Link to="/settings"><i className="fa-solid fa-gear" onClick={toggleSetting} ></i></Link>
         </div>
         <div className="notiSection">
         <div className="notivicationIcon">
@@ -94,8 +98,30 @@ const Navbar = ({ toggleSetting , toggleMessage }) => {
           
         </div>
         </div>
-        <div className="userIcon">
-          <img src={notPic2} alt="userImg" />
+        <div className="userIcon" onClick={()=>setImg(!img)}>
+          <img src={mainPhoto} alt="userImg" />
+          {
+            img && (
+              <div className="userSection" >
+                <div className="head-user">
+
+                   <img src={mainPhoto} alt="userImg"/>
+                
+                  <h5>Lori lompson</h5>
+
+                </div>
+                <button className="blue-btn">View Profile</button>
+                <ul className="details">
+                  <li><i class="fa-solid fa-gear"></i>            Setting and privacy</li>
+                  <li><i class="fa-solid fa-phone"></i>           Support</li>
+                  <li><i class="fa-solid fa-book"></i>            Documentation</li>
+                </ul>
+                <button className="blue-btn"><i class="fa-solid fa-right-from-bracket"></i></button>
+
+              </div>
+            )
+          }
+
         </div>
       </div>
     </div>
