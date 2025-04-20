@@ -1,0 +1,179 @@
+/*********profile main section */
+.profile{
+    display:flex;
+    align-items: center;
+    gap:5rem;
+    background-color:var(--background);
+}
+/*********left-main*/
+.left-main{
+    margin-left:6rem;
+    background-color:var(--white);
+    min-width: 0; /* allow shrinking inside flex */
+}
+.left-main .header img:first-child{
+    width:800px;
+    height:260px;
+    border-radius:5px 5px 0 0;
+}
+.left-main .header .content{
+    display:flex;
+    align-items: center;
+    gap:50px;
+}
+.left-main .header .content img{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    margin:-3rem 0 0 2rem;
+}
+.left-main .header .user-name{
+    margin:-1rem 0 0 -2.5rem;
+}
+
+.left-main .header .user-name h3
+{
+    margin:0 0 0 0rem;
+    color:var(--dark-blue);
+}
+.left-main .header .user-name span{
+    margin:0 0 0 0rem;
+    color:var(--blue);
+}
+.editing-area{
+    margin:-2rem 0 0 16rem;
+}
+.editing-area i:nth-child(2){
+    color:var(--dark-blue);
+}
+.editing-area button{
+    margin-right:1rem;
+}
+.left-main .sections .header-section{
+    display:flex;
+    align-items: center;
+    font-weight: 600;
+    gap:2rem;
+}
+.left-main .sections .header-section li a{
+    color:var(--dark-gray);
+}
+
+.left-main .sections .header-section li a.active{
+    color:var(--blue);
+}
+
+
+/***************right section*/
+.right-main{
+    width:400px;
+    position:absolute;
+    top:100px;
+    left:950px;
+}
+.right-main .top-section{
+    background-color:var(--white);
+    padding:1rem;
+    border-radius:5px;
+    width:400px;
+}
+.right-main .top-section p{
+    color:var(--dark-gray);
+}
+.right-main .top-section ul span{
+    color:var(--dark-blue);
+    font-weight: 600;
+}
+.experience-section {
+    background-color:var(--white);
+    padding:1rem;
+    border-radius:5px;
+    margin-top:2rem;
+    width:400px;
+}
+.experience-section .header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.experience-section .header i{
+    background-color: var(--light-blue);
+    color:var(--dark-blue);
+    padding:.5rem;
+    cursor:pointer;
+}
+.experience-section .header i:hover{
+    background-color: var(--dark-blue);
+    color:var(--white);
+    padding:.5rem;
+} 
+.experience-section .details li img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+}
+.experience-section .details li {
+    display:flex;
+    align-items: center;
+    gap:2rem;
+}
+.photos-section{
+    width:400px;
+    background-color:var(--white);
+    margin-top:2rem;
+    padding-left:3rem;
+    border-radius:5px;
+}
+.photos-section .header{
+    display:flex;
+    align-items: center;
+    gap:130px;
+}
+.album img{
+    border-radius:10px;
+}
+.album .col1 img{
+    width:150px;
+    height:150px;
+    margin:.3rem;
+}
+.album .col2 img{
+    width:100px;
+    height:100px;
+    margin:.1rem;
+}
+
+.friends {
+    background-color:var(--white);
+    padding:1rem;
+    border-radius:5px;
+    margin-top:2rem;
+}
+.friends .header{
+    display:flex;
+    align-items: center;
+    gap:80px;
+}
+.friends .header span{
+    background-color:var(--light-red);
+    color:var(--red);
+    padding:.5rem;
+    border-radius:5px;
+}
+.accounts li{
+    width:450px;
+    display:Flex;
+    flex-wrap: wrap;
+}
+.accounts li .account{
+    border:2px dotted var(--gray);
+    padding:1rem;
+}
+.accounts li img{
+    width:100px;
+    border-radius:50%;
+}
+.accounts li .text{
+    align-items: center;
+    text-align:center;
+}

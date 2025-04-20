@@ -39,9 +39,8 @@ const Navbar = ({ toggleSetting , toggleMessage }) => {
 
   const notChange = () => {
     setNot(!not);
+    setImg(false);
   };
-
-  
 
   return (
     <div className="navbarContainer container">
@@ -52,8 +51,17 @@ const Navbar = ({ toggleSetting , toggleMessage }) => {
         <ul className="list">
           <li><a href="">Demo</a></li>
           <li><a href="">Pages</a></li>
-          <li><a href="">Account</a></li>
-          <li><a href="">My Network</a></li>
+          <li className="account">
+            <Link to="#">Account <i className="fa-solid fa-caret-down"></i></Link>
+              <ul className="accountList">
+               <li><Link>Create a page</Link></li>
+               <li><Link>Notification</Link></li>
+               <li><Link>Settings</Link></li>
+               <li><Link>Help Center</Link></li>
+               <li><Link to="/profile">profile</Link></li>
+              </ul>
+          </li>
+          <li><Link to="#">My Network</Link></li>
         </ul>
       </div>
       <div className="leftNav icons">
@@ -82,7 +90,7 @@ const Navbar = ({ toggleSetting , toggleMessage }) => {
 
           {Noti && Noti.length > 0 ? (
             Noti.map((item) => (
-              <div className="notification" key={item.id}>
+              <div className="notification-content" key={item.id}>
                 <img src={item.img} alt="Notification" />
                 <p>{item.description}</p>
                 <span>{item.time}</span>
@@ -98,24 +106,30 @@ const Navbar = ({ toggleSetting , toggleMessage }) => {
           
         </div>
         </div>
-        <div className="userIcon" onClick={()=>setImg(!img)}>
-          <img src={mainPhoto} alt="userImg" />
+        <div className="userIcon"
+          onClick={() => {
+            setImg(!img);
+            setNot(false);
+          }}
+        >         
+        <img src={mainPhoto} alt="userImg" />
           {
             img && (
-              <div className="userSection" >
-                <div className="head-user">
-
-                   <img src={mainPhoto} alt="userImg"/>
+              <div className="userSection">
                 
+                <div className="head-user">
+                   <img src={mainPhoto} alt="userImg"/>
                   <h5>Lori lompson</h5>
-
                 </div>
+
                 <button className="blue-btn">View Profile</button>
+
                 <ul className="details">
                   <li><i class="fa-solid fa-gear"></i>            Setting and privacy</li>
                   <li><i class="fa-solid fa-phone"></i>           Support</li>
                   <li><i class="fa-solid fa-book"></i>            Documentation</li>
                 </ul>
+                
                 <button className="blue-btn"><i class="fa-solid fa-right-from-bracket"></i></button>
 
               </div>

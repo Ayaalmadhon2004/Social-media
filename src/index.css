@@ -5,11 +5,12 @@
   --light-blue:#e5f8ff;
   --blue:#3674B5;
   --red:rgb(220, 0, 0);
+  --light-red:rgb(255, 235, 235);
   --gray:rgb(232, 232, 232);
   --white:#fff;
   --black:#000;
   --background:rgb(247, 252, 255);
-  --dark-gray:rgb(179, 179, 179);
+  --dark-gray:rgb(165, 165, 165);
 }
 *{
   font-family: "Poppins", serif;
@@ -36,10 +37,11 @@ a{
 .blue-btn{
   color:var(--blue);
   background-color: var(--light-blue);
-  border:none;
-  font-size:1rem;
+  padding:.5rem;
   font-weight: 600;
-  padding:.4rem;
+  cursor:pointer;
+  border:none;
+  border-radius:5px;
 }
 .gray-btn{
   color:var(--gray);
@@ -57,4 +59,30 @@ a{
   width:40px;
   height:40px;
 
+}
+.btn-red{
+  color:var(--red);
+  background-color:var(--light-red);
+  padding:.5rem;
+  font-weight: 600;
+  cursor:pointer;
+  border:none;
+  border-radius:5px;
+}
+.btn-red:hover{
+  background-color:var(--red);
+  color:var(--white);
+}
+.btn-green{
+  color:var(--blue);
+  background-color:var(--light-blue);
+  padding:1rem;
+  font-weight: 600;
+  cursor:pointer;
+  border:none;
+  border-radius:5px;
+}
+.btn-green:hover{
+  background-color:var(--blue);
+  color:var(--white);
 }

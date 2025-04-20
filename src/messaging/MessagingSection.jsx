@@ -9,52 +9,51 @@ import messagePerson5 from "../Assets/Images/person6.jpg";
 import messageUsers from "../data/data";
 
 const chats = [
-  { id: 1, img: messagePerson1, response1: "Hello dear sir, how are you?", timeR1: "12:40", reply: "I am good, thanks!", timeRe2: "12:41" },
-  { id: 2, img: messagePerson2, response1: "Hey! Can we talk?", timeR1: "13:10", reply: "Sure, call me.", timeRe2: "13:15" },
-  { id: 3, img: messagePerson3, response1: "Did you check the email?", timeR1: "14:00", reply: "Yes, I'll reply soon.", timeRe2: "14:05" },
-  { id: 4, img: messagePerson4, response1: "Let's meet tomorrow.", timeR1: "15:20", reply: "Sounds good!", timeRe2: "15:25" },
-  { id: 5, img: messagePerson5, response1: "What’s the update?", timeR1: "16:00", reply: "Will send it by evening.", timeRe2: "16:05" }
+  { id: 1, img: messagePerson1,name:"jerman", response1: "Hello dear sir, how are you?", timeR1: "12:40", reply: "I am good, thanks!", timeRe2: "12:41" },
+  { id: 2, img: messagePerson2,name:"jerman", response1: "Hey! Can we talk?", timeR1: "13:10", reply: "Sure, call me.", timeRe2: "13:15" },
+  { id: 3, img: messagePerson3,name:"jerman", response1: "Did you check the email?", timeR1: "14:00", reply: "Yes, I'll reply soon.", timeRe2: "14:05" },
+  { id: 4, img: messagePerson4,name:"jerman", response1: "Let's meet tomorrow.", timeR1: "15:20", reply: "Sounds good!", timeRe2: "15:25" },
+  { id: 5, img: messagePerson5,name:"jerman", response1: "What’s the update?", timeR1: "16:00", reply: "Will send it by evening.", timeRe2: "16:05" }
 ];
 
 const MessagingSection = ({ message }) => {
-  // State for search input, filtered users, selected chat, current input text, and submitted text.
   const [search, setSearch] = useState("");
   const [filteredUsers, setFilteredUsers] = useState(messageUsers);
   const [selectedChat, setSelectedChat] = useState(null);
+  const [messages, setMessages] = useState([]); 
   const [type, setType] = useState("");
-  const [submit, setSubmit] = useState("");
 
-  // Handler for search input
   const searchHandler = (e) => {
     const searchValue = e.target.value.toLowerCase();
     setSearch(searchValue);
-    if (searchValue.trim() !== "") {
-      setFilteredUsers(messageUsers.filter(user => user.name.toLowerCase().includes(searchValue)));
-    } else {
-      setFilteredUsers(messageUsers);
-    }
+    setFilteredUsers(
+      searchValue.trim() !== ""
+        ? messageUsers.filter(user => user.name.toLowerCase().includes(searchValue))
+        : messageUsers
+    );
   };
 
-  // Handler for selecting a chat user
   const chooseChat = (user) => {
     const chat = chats.find(chat => chat.id === user.id);
     setSelectedChat(chat);
   };
 
-  // Handler for keydown event on the message input
-  // Note: we check for "Enter" (with a capital E)
   const submitChange = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && type.trim() !== "") {
       e.preventDefault();
-      setSubmit(type);
-      setType("");
+      setMessages([
+        ...messages,
+        { text: type, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }
+      ]);
+      setType(""); 
     }
   };
 
   return (
     <div className={`messageContainer container ${message ? "active" : ""}`}>
       <div className="message2sections">
-        {/* Left section: List of users */}
+
+        {/* Left Section: Active Chats */}
         <div className="leftMessage">
           <div className="headLeftMessage">
             <h3>Active chats</h3>
@@ -95,18 +94,16 @@ const MessagingSection = ({ message }) => {
           </div>
         </div>
         
-        {/* Right section: Chat window */}
+        {/* Right Section: Chat Window */}
         <div className="rightMessage">
           {selectedChat ? (
             <>
               <div className="headRightMessage">
                 <div className="leftHeadRM">
                   <div className="user">
-                    <img src={selectedChat.img} alt={selectedChat.name} />
+                    <img src={selectedChat.img} alt="Chat Person" />
                     <div className="detUser">
                       <h4>{selectedChat.name}</h4>
-                      <p>{selectedChat.state}</p>
-                      <div className={`state2 ${selectedChat.state === "online" ? "online" : "offline"}`}></div>
                     </div>
                   </div>
                 </div>
@@ -116,17 +113,22 @@ const MessagingSection = ({ message }) => {
                   <i className="fa-solid fa-comment-dots"></i>
                 </div>
               </div>
+
               <div className="bottomRightMessage">
                 <div className="chat">
                   <p className="response">{selectedChat.response1}</p>
                   <span>{selectedChat.timeR1}</span>
                   <p className="reply">{selectedChat.reply}</p>
                   <span>{selectedChat.timeRe2}</span>
-                  {/* Display submitted message only if it exists */}
-                  {submit && <p>{submit}</p>}
+                  
+                  {messages.map((msg, index) => (
+                    <p key={index} className="response">
+                      {msg.text} <span>{msg.time}</span>
+                    </p>
+                  ))}
                 </div>
+
                 <div className="texting">
-                  {/* Text input for message typing with onKeyDown to handle "Enter" key */}
                   <input 
                     type="text" 
                     placeholder="Type a message" 
@@ -134,9 +136,11 @@ const MessagingSection = ({ message }) => {
                     onChange={(e) => setType(e.target.value)} 
                     onKeyDown={submitChange}
                   />
-                  <i className="fa-solid fa-face-smile"></i>
-                  <i className="fa-solid fa-link"></i>
-                  <i className="fa-solid fa-paper-plane"></i>
+                  <div className="icons">
+                    <i className="fa-solid fa-face-smile"></i>
+                    <i className="fa-solid fa-link"></i>
+                    <i className="fa-solid fa-paper-plane"></i>
+                  </div>
                 </div>
               </div>
             </>

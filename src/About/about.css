@@ -1,0 +1,75 @@
+/***** About Styling - Same Style As left-main *****/
+
+.About.container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.About h2 {
+    font-size: 2rem;
+    color: var(--dark-blue);
+    margin-bottom: 1.5rem;
+}
+
+.box1 {
+    background-color: #f7f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.box1 h3 {
+    font-size: 1.4rem;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+}
+
+.box1 p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.miniBoxes {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.left, .right {
+    flex: 1;
+    min-width: 300px;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.leftBoxes {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+.leftBoxes li,
+.right li {
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+.formal-btn {
+    background-color: var(--blue);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formal-btn:hover {
+    background-color: var(--dark-blue);
+}

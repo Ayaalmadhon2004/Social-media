@@ -1,0 +1,22 @@
+
+.media h2{
+    margin:30px 0 0 30px;
+}
+.media .details{
+    display:flex;
+    align-items: center;
+    gap:2rem;
+    max-width:400px;
+    flex-wrap:wrap;
+
+}
+.Add-photo{
+    width:190px;
+    height:190px;
+    padding:20px;
+}
+.photos img{
+    width:200px;
+    height:200px;
+    border-radius:10px;
+}

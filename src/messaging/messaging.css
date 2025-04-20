@@ -3,6 +3,7 @@
     padding:20px 40px;
     background-color:var(--background);
     height:85vh;
+    width:Auto;
 
 }
 .message2sections{
@@ -15,9 +16,10 @@
 .messageContainer.active{
     display:block;
 }
+/******left message*/
 .leftMessage{
     background-color:var(--white);
-
+    padding:0 0 0 1rem;
 }
 .search{
     border:1px solid var(--gray);
@@ -33,7 +35,9 @@
     width:220px;
     margin-right:5px;
 }
-
+.search i{
+    margin-left:-1rem;
+}
 .headLeftMessage{
     display:flex;
     align-items: center;
@@ -43,7 +47,11 @@
     color:var(--black);
     background-color:var(--light-blue);
     padding:5px;
-    border-radius:30%;
+    border-radius:50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:3.9rem;
 }
 .user{
     display:flex;
@@ -95,6 +103,8 @@
 .detUser p{
   margin-top:-1.5rem;
 }
+
+/**right*/
 .headRightMessage{
     display:flex;
     align-items: center;
@@ -139,11 +149,26 @@
 .chat span{
     align-items:left;
 }
-.bottomRightMessage input{
+.chat p{
+    max-width:720px;
+}
+.texting input{
     width:500px;
-    padding:.5rem;
+    padding:1rem;
     margin-top:1rem;
     border:none;
+    width:650px;
+
+}
+.texting{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    max-width:750px;
+}
+.texting i{
+    margin-left:.5rem;
+    color:var(--dark-blue);
 }
 .rightMessage{
     background-color:var(--white);
@@ -175,8 +200,7 @@
 .detUser p{
     color:#000;
 }
-.texting{
-    display:flex;
-    align-items: center;
-    justify-content: center;
+.bottomSection{
+    padding:1rem;
 }
+

@@ -64,17 +64,31 @@ const Settings = ({setting}) => {
          </form>
         </div>
 
-        <div className="bottomSection">
-          <h3>Change your password</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At inventore, esse sunt veniam in repudiandae voluptatem eius. Animi dolore aliquam, debitis veritatis rerum possimus?</p>
-          <label id="pass">Current password</label>
-          <input for="pass" placeholder=""/>
-          <label id="Npass">New password</label>
-          <input for="Npass" placeholder=""/>
-          <label id="Conpass">Confirm password</label>
-          <input for="Conpass" placeholder=""/>
-          <button className='blue-btn'>Update password</button>
-        </div>
+      <div className="bottomSection">
+       <h3>Change Your Password</h3>
+       <p>
+       Ensure your account's security by updating your password. Choose a strong and unique password.
+       </p>
+
+       <form className='bottom-form'>
+          <div className="form-group">
+          <label htmlFor="current-password">Current Password</label><br/>
+          <input type="password" id="current-password" placeholder="Enter current password" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="new-password">New Password</label><br/>
+            <input type="password" id="new-password" placeholder="Enter new password" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="confirm-password">Confirm Password</label><br/>
+            <input type="password" id="confirm-password" placeholder="Re-enter new password" />
+          </div>
+
+          <button className="blue-btn">Update Password</button>
+       </form>
+       </div>
        </div>
        </div>
     </div>

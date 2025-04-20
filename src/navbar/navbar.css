@@ -58,6 +58,38 @@ margin-left:10rem;
 .userIcon img{
     margin-left: 1.5rem;
 }
+/********* account dropdown */
+
+.list .account{
+    position:relative;
+}
+.account a{
+    display:inline-flex;
+    gap:0.5rem;
+    align-items: center;
+}
+.accountList{
+    display:none;
+    cursor:pointer;
+    font-weight: 500;
+    position:absolute;
+    top:1.4rem;
+    left:-4rem;
+    height:auto;
+    width:150px;
+    padding:1rem;
+    background-color: var(--white);
+    box-shadow:.8px .8px .8px .8px rgba(234, 233, 233, 0.8);
+    border-radius:5px;
+    text-align: start;
+}
+.account:hover .accountList,
+.accountList:hover{
+    display:block;
+}
+.accountList li:hover{
+    color:var(--dark-gray);
+}
 /*********noti dropdown*/
 .notovication{
   display:none;
@@ -65,10 +97,12 @@ margin-left:10rem;
   top:3rem;
   right:5rem;
   max-width:400px;
-  background:#fff;
-  padding-right:3rem;
+  background:#ffffff;
+  padding:1rem;
   margin-top:1.5rem;
-  
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .notovication.active{
@@ -88,27 +122,27 @@ margin-left:10rem;
 .sub-headNot p{
     color:var(--red);
 }
-.notification{
+.notification-content{
     display:flex;
     align-items: center;
     justify-content: space-between;
     max-width:400px;
     position:relative;
-    right:-3rem;
+    right:1px;
     
 }
-.notification p,span{
-    color:rgb(211, 211, 211);
+.notification-content p,span{
     text-align:left;
     margin-left:1rem;
 }
-.notification img{
+.notification-content img{
     width:50px;
     height:50px;
     border-radius:50%;
 }
-.notification:hover{
-    background-color:gray;
+.notification-content:hover{
+    background-color:var(--gray);
+    padding:5px;
     cursor:pointer;
 }
 .bottomNot{
@@ -117,6 +151,7 @@ margin-left:10rem;
 }
 
 /*********user section dropdown*/
+
 .head-user{
     display:flex;
     align-items: center;
@@ -127,10 +162,12 @@ margin-left:10rem;
 .userSection{
     position:absolute;
     top:5rem;
-    right:3.5rem;
-    background-color:#fff;
+    right:3rem;
+    background-color:#ffffff;
+    width:300px;
     padding:1rem;
-    padding-right:2.7rem;
+    box-shadow:1px 1px 1px 1px  rgba(0,0,0,0.1);
+    border-radius: 10px;  
     
 }
 .userSection button{
@@ -138,9 +175,15 @@ margin-left:10rem;
     width:200px;
 }
 .head-user{
-    margin-right:2rem;
+    margin-right:3.4rem;
 }
 .head-user img{
     margin-right:2rem;
     margin-left:3.5rem;
+}
+.details{
+    margin-left:-20px;
+}
+.details i{
+    margin:0 10px 10px 0;
 }

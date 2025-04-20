@@ -14,6 +14,9 @@ import messageUsers from '../data/data';
 const Header = React.memo(() => {
   const [photo, setPhoto] = useState(false);
   const [close,setClose] =useState(false);
+  const[image,setImage]=useState(null);
+
+
   const [video, setVideo] = useState(false);
   const [event, setEvent] = useState(false);
   const [feeling, setFeeling] = useState(false);
@@ -31,7 +34,8 @@ const Header = React.memo(() => {
     { idx: 3, img: 'fa-solid fa-calendar-days', name: 'Event' },
     { idx: 4, img: 'fa-solid fa-person-breastfeeding', name: 'Feeling' },
   ];
- 
+  
+  
   const closeChange=()=>{
     setClose(!close);
   }
@@ -70,6 +74,13 @@ const Header = React.memo(() => {
         break;
     }
   };
+
+  const handleChange=(e)=>{
+    const file=e.target.files[0];
+    if(file){
+      setImage(URL.createObjectURL(file));
+    }
+  }
 
   const newsSection=[
     {
@@ -165,10 +176,22 @@ const Header = React.memo(() => {
                               <i className="fa-solid fa-xmark" onClick={closeChange}></i>
                             </div>
                             <div className="thoughts">
+                              
+                              <div className="textPost">
                               <img src={mainPhoto} alt="personal-img"/>
                               <textarea placeholder='share your thoughts'></textarea>
+                              </div>
+
+                               <div className="image-upload">
+                                <h3>Upload attachment</h3>
+                                <input type="file" id="upload" accept='image/*' onChange={handleChange} />
+                               </div>
+
+                               <div className="btns">
+                                <div className="btn-red">Cancel</div>
+                                <div className="btn-green">Post</div>
+                               </div>
                             </div>
-                            
                           </div>
                         ))}
                       </div>
@@ -241,17 +264,42 @@ const Header = React.memo(() => {
             </div>
             </div>
             <div className="comments">
+              <div className="head-comments">
               <img src={mainPhoto} alt="personal-img"/>
               <input type="text" placeholder="Add a comment"/>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+              <div className="content-comments">
+                {messageUsers.map((comment)=>(
+                  <div className="comment" key={comment.id}>
+                    <div className="head-comment">
+                      <img src={comment.img} alt={comment.name}/>
+                      <div className="content-head-comment ">
+                      <h3>{comment.name}</h3> 
+                      <span>{comment.time}</span>
+                      </div>
+                    </div>
+                     <div className='center-section gray'>
+                     <p>{comment.comment}</p>
+                     </div>
+                     <div className="interaction-comment">
+                      <span>Like({comment.like})</span>
+                      <span>Reply</span>
+                     </div>
+                  </div>
+                ))}
+              </div>
             </div>
+          </div>
+          <div className="personalPost2">
             <div className="head">
-              <img src={mainPhoto} alt="personal-img"/>
-              <p>Sam lanson</p>
-              <span>2 hours</span>
+              <img src={personalImg} alt="main photo"/>
+              <h3>Lora Ali</h3>
+              <span>1 hours</span>
             </div>
             <div className="details">
-              <p>I'm thrilled to share that I've completed a graduate certificate course in project management with the president's honor roll.</p>
-              <img src={graduated} alt="graduated"/>
+             <p>I'm thrilled to share that I've completed a graduate certificate course in project management with the president's honor roll.</p>
+              <img src={story2} alt="post2"/>
             </div>
             <div className="interactions">
             <div className='interactionContainer'>
@@ -260,11 +308,6 @@ const Header = React.memo(() => {
               <span className='share'><i class="fa-solid fa-share"></i> share(2)</span>
             </div>
             </div>
-            <div className="comments">
-              <img src={mainPhoto} alt="personal-img"/>
-              <input type="text" placeholder="Add a comment"/>
-            </div>
-            
           </div>
         </div>
         <div className="rightHead">
