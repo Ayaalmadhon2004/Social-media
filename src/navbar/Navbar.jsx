@@ -55,13 +55,13 @@ const Navbar = ({ toggleSetting , toggleMessage }) => {
             <Link to="#">Account <i className="fa-solid fa-caret-down"></i></Link>
               <ul className="accountList">
                <li><Link>Create a page</Link></li>
-               <li><Link>Notification</Link></li>
-               <li><Link>Settings</Link></li>
-               <li><Link>Help Center</Link></li>
+               <li><Link to="/messages">Messages</Link></li>
+               <li><Link to="/settings">Settings</Link></li>
+               <li><Link to="/HelpCenter">Help Center</Link></li>
                <li><Link to="/profile">profile</Link></li>
               </ul>
           </li>
-          <li><Link to="#">My Network</Link></li>
+          <li><Link to="/profile">My Network</Link></li>
         </ul>
       </div>
       <div className="leftNav icons">

@@ -50,7 +50,7 @@ const Media = () => {
   ];
 
   return (
-    <div className="connection media">
+    <div className="connection media-section">
       <div className="media-header">
         <h2>Photos</h2>
         <div className="blue-btn"><i class="fa-solid fa-plus"></i>  Create album</div>
@@ -64,8 +64,8 @@ const Media = () => {
             <div className="photos" key={photo.key}>
                <img src={photo.img} alt="photo"/>
                <div className="reactions">
-                <span className="love"><i class="fa-solid fa-heart"></i></span>
-                <span className="comment"><i class="fa-solid fa-comment"></i></span>
+                <span className="love">{photo.love}   <i class="fa-solid fa-heart"></i></span>
+                <span className="comment">{photo.comment}   <i class="fa-solid fa-comment"></i></span>
                </div>
             </div>
           ))}

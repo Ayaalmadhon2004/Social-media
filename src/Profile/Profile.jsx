@@ -60,7 +60,7 @@ const Profile = () => {
 
         <div className="right-main">
           <div className="top-section">
-          <h3>About</h3>
+          <h2>About</h2>
           <p>He moonlights difficult engrossed it, sportsmen. Interested has all Devonshire difficulty gay assistance joy.</p>
             <ul className="details">
               <li> <i class="fa-solid fa-calendar"></i>  Born: <span>October 20, 1990</span></li>
@@ -71,7 +71,7 @@ const Profile = () => {
 
           <div className="experience-section">
             <div className="header">
-              <h3>Experience</h3>
+              <h2>Experience</h2>
               <i class="fa-solid fa-plus"></i>
             </div>
 
@@ -103,7 +103,7 @@ const Profile = () => {
 
           <div className="photos-section">
             <div className="header">
-              <h3>Photos</h3>
+              <h2>Photos</h2>
               <div className="blue-btn">See all photo</div>
             </div>
             <div className="album">

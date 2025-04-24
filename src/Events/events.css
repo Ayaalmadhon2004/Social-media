@@ -1,0 +1,68 @@
+.events{
+    background-color: var(--white);
+    padding:0px 20px;
+    border-radius:10px;
+}
+.events .header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:2rem 2rem 1rem 2rem;
+
+}
+.events .header h3{
+    color:var(--dark-blue);
+}
+.green-style{
+    color:var(--black);
+    background-color:rgb(197, 255, 197);
+    border-radius:10px;
+    padding:.5rem 1.5rem;
+    font-weight: 500;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:1rem;
+}
+.green-style span{
+    color:rgb(92, 172, 92);
+    font-weight: 700;
+}
+.green-style i{
+    cursor:pointer;
+}
+.green-btn{
+    background-color:rgb(92, 172, 92);
+    color:var(--white);
+    border:none;
+    border-radius:10px;
+    padding:.5rem;
+    cursor:pointer;
+
+}
+.green-btn:hover{
+   opacity: .8;
+}
+.green-style.active{
+    display:none;
+}
+.comedy-event{
+    display:flex;
+    align-items: center;
+    gap:2rem;
+    margin-left:2rem;
+}
+.comedy-event h3{
+    color:var(--dark-blue);
+}
+.comedy-event span{
+    color:var(--blue);
+    margin-left:0rem;
+    margin-right:1rem;
+}
+.comedy-event i{
+    color:var(--dark-blue);
+}
+.comedy-event img{
+    width:100px;
+}

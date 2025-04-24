@@ -10,7 +10,7 @@
     display:flex;
     align-items: center;
     justify-content: space-between;
-    margin-left:10rem;
+    margin-left:2rem;
 
 }
 .messageContainer.active{
@@ -63,7 +63,7 @@
 }
 .state{
     position:absolute;
-    left:15.5rem;
+    left:8rem;
     border:3px solid var(--white);
 }
 .state.online{
@@ -105,6 +105,9 @@
 }
 
 /**right*/
+.rightMessage{
+    margin-right:5rem;
+}
 .headRightMessage{
     display:flex;
     align-items: center;
@@ -202,5 +205,10 @@
 }
 .bottomSection{
     padding:1rem;
+}
+.bottomRightMessage .chat{
+    height:350px;
+    width:100%;
+    overflow-y: scroll;
 }
 

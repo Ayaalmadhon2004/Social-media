@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./connections.css"
 import messageUsers from '../data/data'
 
 const Connections = () => {
+
+  const [loading,setLoading]=useState(false);
+
+  const handleMore=()=>{
+    setLoading(true);
+    setTimeout(()=>{
+      setLoading(false);
+    },5000);
+  }
 
   return (
     <div className="connections container">
@@ -33,6 +42,11 @@ const Connections = () => {
           }
         </li>
       </ul>
+      <div className="load-more">
+        <button type="submit" className="blue-btn" onClick={handleMore}>
+         {loading? 'loading...' : 'Load more'}
+        </button>
+      </div>
     </div>
   )
 }

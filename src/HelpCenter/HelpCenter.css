@@ -1,0 +1,136 @@
+.HelpCenter{
+    background:var(--background);
+}
+.HelpCenter .topHelp{
+    display:flex;
+    align-items: center;
+    gap:5rem;
+}
+.topHelp img{
+    width:400px;
+    height:400px;
+    box-shadow:none;
+}
+.right-help h2{
+    color:var(--dark-blue);
+    font-weight: 900;
+    font-size:50px;
+}
+.right-help p{
+    color:var(--blue);
+    font-size:30px;
+}
+.right-help input{
+    border:none;
+    border-radius: 10px;
+    padding:1rem 2rem;
+    width:80%;
+}
+.right-help input:focus{
+    outline:none;
+}
+.right-help i{
+    color:var(--dark-blue);
+    margin-left:1rem;
+    font-weight: 900;
+    font-size:20px;
+}
+/***********center*/
+.centerHelp{
+    background-color:var(--white);
+    padding:1rem 3rem ;
+    border-radius:1rem;
+    box-shadow:.4rem .4rem 1rem rgba(0,0,0,0.1);
+    margin-top:3rem;
+}
+.centerList{
+    display:flex;
+    flex-wrap:wrap;
+    width:1400px;
+    margin-left:-4rem;
+}
+.centerList li {
+    font-size:20px;
+    font-weight: 500;
+    margin-left:1rem;
+    margin-bottom:1.5rem;
+    
+}
+.centerHelp h2{
+    color:var(--dark-blue);
+}
+.centerList li a{
+    color:var(--dark-blue);
+    background-color:var(--gray);
+    border-radius:10px;
+    padding:.5rem;
+}
+.centerList li a:hover{
+    opacity:.85;
+}
+.answer-box h3{
+    color:var(--dark-blue);
+    font-size:30px;
+    font-weight: 700;
+}
+.answer-box p{
+    color:var(--dark-gray);
+    font-size:20px;
+    font-weight: 500;
+    margin-top:1rem;
+}
+/********bottom*/
+.bottomHelp{
+    align-items: center;
+    margin:2rem 0 0 17rem;
+}
+.bottomHelp h2{
+    margin-left:17rem;
+    color:var(--dark-blue);
+    font-size:2rem;
+}
+.bottomHelp .article{
+    display:flex;
+    align-items: center;
+    gap:14rem;
+    width:800px;
+    background-color:var(--white);
+    margin-bottom:2rem;
+    box-shadow:.4px .4px 1px rgba(0,0,0,0.1);
+    border-radius:10px;
+}
+.article .left{
+    box-shadow: none;
+    background:transparent;
+}
+.article .left h3{
+    color:var(--dark-blue);
+    width:500px;
+}
+.article .left p{
+    color:var(--blue);
+}
+.article .left p{
+    width:500px;
+}
+.article .right{
+    box-shadow: none;
+    background:transparent;
+}
+.right button{
+    color:var(--dark-blue);
+    background-color:var(--white);
+    border:1px solid var(--dark-gray);
+    padding:.5rem;
+    margin-left:.5rem;
+    cursor:pointer;
+}
+.right button:hover{
+    opacity:.7;
+}
+.like.active{
+    background-color:var(--gray);
+}
+.dislike.active2{
+    background-color:var(--gray);
+}

@@ -4,6 +4,10 @@
     padding:0 40px;
     gap:10rem;
 }
+.rightNav h2 {
+    width:160px;
+    font-weight: 900;
+}
 .list {
     display:flex;
     align-items: center;
@@ -28,6 +32,7 @@
 }
 .list{
 margin-left:10rem;
+width:400px;
 }
 .list li{
     margin-left:1rem;
@@ -35,14 +40,18 @@ margin-left:10rem;
 .list li a{
     color:var(--blue);
     font-weight: 600;
+    
 }
 .list li a:hover{
     color:var(--dark-blue);
     font-weight: 800;
 
 }
+.centerNav{
+    margin-left:0rem;
+}
 .leftNav {
-    margin-left:10rem;
+    margin-left:5rem;
 }
 .icons{
     display:flex;

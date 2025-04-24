@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./settings.css"
+import { useNavigate } from 'react-router'
 
 const Settings = ({setting}) => {
+  const navigate=useNavigate();
+
+  useEffect(()=>{
+    if(!setting) navigate("/header");
+  },[setting,navigate]);
+  
   return (
     <div className={`settingsContainer container ${setting ? "active":""}`}>
        <div className="setting2Sections">

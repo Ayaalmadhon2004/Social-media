@@ -4,11 +4,11 @@
     align-items: center;
     gap:5rem;
     background-color:var(--background);
+    height:auto;
 }
 /*********left-main*/
 .left-main{
     margin-left:6rem;
-    background-color:var(--white);
     min-width: 0; /* allow shrinking inside flex */
 }
 .left-main .header img:first-child{
@@ -76,37 +76,63 @@
     padding:1rem;
     border-radius:5px;
     width:400px;
+    box-shadow:.2rem .2rem 1rem rgba(0,0,0,0.1);
+    margin-top:1.6rem;
+}
+.right-main .top-section h2{
+    color:var(--dark-blue);
+    font-weight: 900;
+    margin-left:1.5rem;
+
 }
 .right-main .top-section p{
+    color:var(--dark-gray);
+    margin-left:1.5rem;
+    margin-top:-1rem;
+}
+.right-main .top-section ul{
     color:var(--dark-gray);
 }
 .right-main .top-section ul span{
     color:var(--dark-blue);
     font-weight: 600;
 }
+/********experience section */
+
 .experience-section {
     background-color:var(--white);
     padding:1rem;
     border-radius:5px;
     margin-top:2rem;
     width:400px;
+    box-shadow:.2rem .2rem 1rem rgba(0,0,0,0.1);
+
 }
 .experience-section .header{
     display:flex;
     align-items: center;
     justify-content: space-between;
 }
+.experience-section .header h2{
+    color:var(--dark-blue);
+    font-weight: 900;
+    margin-left:1.5rem;
+}
 .experience-section .header i{
     background-color: var(--light-blue);
     color:var(--dark-blue);
     padding:.5rem;
     cursor:pointer;
+    margin-right:2.5rem;
 }
 .experience-section .header i:hover{
     background-color: var(--dark-blue);
     color:var(--white);
     padding:.5rem;
 } 
+.experience-section .details{
+    margin-top:0;
+}
 .experience-section .details li img{
     width:70px;
     height:70px;
@@ -115,45 +141,76 @@
 .experience-section .details li {
     display:flex;
     align-items: center;
-    gap:2rem;
+    gap:1rem;
 }
+.experience-section .details p{
+    color:var(--dark-gray);
+    margin-top:-1rem;
+}
+.experience-section .details h4{
+    color:var(--dark-blue);
+}
+
+/*******photos*/
+
 .photos-section{
     width:400px;
     background-color:var(--white);
     margin-top:2rem;
-    padding-left:3rem;
+    padding:0 0 1.2rem 2rem;
     border-radius:5px;
+    box-shadow:.2rem .2rem 1rem rgba(0,0,0,0.1);
+
+}
+.photos-section h2{
+    color:var(--dark-blue);
+    font-weight: 900;
 }
 .photos-section .header{
     display:flex;
     align-items: center;
-    gap:130px;
+    gap:155px;
 }
 .album img{
     border-radius:10px;
 }
 .album .col1 img{
-    width:150px;
-    height:150px;
+    width:175px;
+    height:170px;
     margin:.3rem;
 }
 .album .col2 img{
-    width:100px;
-    height:100px;
+    width:119px;
+    height:120px;
     margin:.1rem;
 }
+
+/****friends*/
 
 .friends {
     background-color:var(--white);
     padding:1rem;
     border-radius:5px;
     margin-top:2rem;
+    margin-left:0rem;
+    width:400px;
+    box-shadow:.2rem .2rem 1rem rgba(0,0,0,0.1);
+
+
 }
+
 .friends .header{
     display:flex;
     align-items: center;
-    gap:80px;
+    gap:90px;
+    width:400px;
+    margin-left:1.5rem;
 }
+.friends .header h3{
+    color:var(--dark-blue);
+    font-weight: 900;
+}
+
 .friends .header span{
     background-color:var(--light-red);
     color:var(--red);
@@ -165,15 +222,40 @@
     display:Flex;
     flex-wrap: wrap;
 }
+.accounts{
+    margin-left:-1.7rem;
+    margin-top:0;
+    width:400px;
+}
 .accounts li .account{
     border:2px dotted var(--gray);
     padding:1rem;
+    text-align: center;
+    margin:.5rem;
+    width:140px;
 }
 .accounts li img{
-    width:100px;
+    width:80px;
     border-radius:50%;
+    align-items: center;
 }
 .accounts li .text{
     align-items: center;
     text-align:center;
+}
+.accounts li .text h4{
+    color:var(--dark-blue);
+    font-weight: 600;
+    font-size:16px;
+    margin-top:0;
+    width:150px;
+}
+.accounts li .text p{
+    color:var(--dark-gray);
+    font-size:10px;
+    margin-top:-1.3rem;
+
+}
+.account .btns{
+    margin-left:35px;
 }

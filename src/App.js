@@ -10,6 +10,7 @@ import Connections from './connections/Connections';
 import Media from "./media/Media";
 import Events from "./Events/Events";
 import Activity from "./Activity/Activity";
+import HelpCenter from './HelpCenter/HelpCenter';
 
 const App = () => {
   const [setting, setSetting] = useState(false);
@@ -26,17 +27,26 @@ const App = () => {
     setSetting(false);
   };
 
+  {/* events in header 
+      setting and message in navbar 
+      activity part
+    */}
+
   return (
     <div>
       <Navbar toggleSetting={toggleSetting} toggleMessage={toggleMessage} />
       
       {(!location.pathname.includes("/settings") && 
       !location.pathname.includes("/messages") && 
-      !location.pathname.includes("/profile")) && <Header />}
+      !location.pathname.includes("/profile")) && 
+      !location.pathname.includes("/HelpCenter") &&
+      <Header />}
 
       <Routes>
         <Route path="/settings" element={<Settings setting={setting} />} />
         <Route path="/messages" element={<MessagingSection message={message} />} />
+        <Route path="/HelpCenter" element={<HelpCenter/>}></Route>
+        <Route path="/question/:id" element={<HelpCenter />} />
 
         <Route path="/profile" element={<Profile />}>
           <Route path="about" element={<About />} />
