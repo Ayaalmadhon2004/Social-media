@@ -1,11 +1,14 @@
 .connections{
     background-color:var(--white);
-    padding-top:2rem;
+    padding-top:1rem;
+    width:800px;
 }
 .connections .header h2{
-    margin-left:30px;
-    margin-top:30px;
-    color:var(--dark-blue);
+    color: var(--blue);
+    font-weight: 900;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
 
 }
 .connections .sub-connections{
@@ -13,31 +16,36 @@
     align-items: center;
     justify-content: space-between;
 }
-.connections .sub-connections img{
+img.imging{
     width:100px;
+    height:100px;
     border-radius:50%;
-}
-.connections .sub-connections .jobName{
-    display:flex;
-    align-items: center;
-    gap:10px;
 }
 .sub-connections .details{
     display:flex;
     align-items: center;
     width:300px;
     margin-right:23rem;
+    margin-left:1rem;
 
 }
 .jobName h3{
     color:var(--dark-blue);
+    width:200px;
+    margin-bottom:0;
 }
 .jobName p{
     color:var(--blue);
+    width:250px;
+    margin-top:0rem;
 }
 .sub-connections .details .right{
     box-shadow: none;
-    margin-right:6.5rem;
+    margin-right:1.5rem;
+}
+.sub-connections .details .right p{
+    width:400px;
+    margin-top:0;
 }
 .connections .load-more{
     margin-top:1rem;

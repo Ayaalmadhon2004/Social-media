@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import "./messaging.css";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation } from "react-router";
 
 import messagePerson1 from "../Assets/Images/01-person2.jpg";
 import messagePerson2 from "../Assets/Images/02-person3.jpg";
@@ -23,7 +23,6 @@ const MessagingSection = ({ message }) => {
   const [selectedChat, setSelectedChat] = useState(null);
   const [messages, setMessages] = useState([]); 
   const [type, setType] = useState("");
-  const navigate = useNavigate();
   const location = useLocation();
 
 
@@ -53,18 +52,12 @@ const MessagingSection = ({ message }) => {
     }
   };
   
-  useEffect(() => {
-    if (!message) {
-      navigate("/header");
-    }
-  }, [message, navigate]);
 
 
   return (
 <div className={`messageContainer container ${(message || location.pathname === "/messages") ? "active" : ""}`}>
       <div className="message2sections">
-
-        {/* Left Section: Active Chats */}
+        
         <div className="leftMessage">
           <div className="headLeftMessage">
             <h3>Active chats</h3>

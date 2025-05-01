@@ -2,12 +2,9 @@ import React, { useState } from 'react'
 import background from "../Assets/santa-maddalena-dolomites-rangesouth-tyrol.jpg";
 import mainPhoto from "../Assets/Images/01-person2.jpg";
 import sand from "../Assets/Images/02-R8aJwnbE.jpg";
-import car from "../Assets/Images/01-BMm0elYk.jpg";
+import car from "../Assets/Images/04-BOvEXeUh.jpg";
 import tree from "../Assets/Images/04-BOvEXeUh.jpg";
-import user1 from "../Assets/Images/01-BMm0elYk.jpg";
-import user2 from "../Assets/Images/01-person2.jpg";
-import user3 from "../Assets/Images/02-BK-gsEJw.jpg";
-import user4 from "../Assets/Images/02-R8aJwnbE.jpg";
+import user1 from "../Assets/Images/02-person3.jpg";
 
 import "../Profile/profile.css";
 import { Link, Outlet } from 'react-router';

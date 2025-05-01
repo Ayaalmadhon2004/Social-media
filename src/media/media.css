@@ -1,9 +1,14 @@
 .media-section{
     display:inline;
+    width:800px;
+    background-color:var(--white);
 }
 .media-section h2{
-    margin:2rem 0 0 30px;
-    color:var(--dark-blue);
+    color: var(--blue);
+    font-weight: 900;
+    margin-left: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
 
 }
 .media-header{
@@ -20,7 +25,6 @@
     flex-wrap: wrap;
     padding:2rem;
     padding-left:5rem;
-    background-color: var(--white);
 
     
 }

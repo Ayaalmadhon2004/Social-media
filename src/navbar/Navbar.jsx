@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./navbar.css";
 import notPic from "../Assets/Images/07-DLMl_mTI.jpg";
 import notPic2 from "../Assets/Images/02-person3.jpg"; 
@@ -36,11 +36,36 @@ const Noti = [
 const Navbar = ({ toggleSetting , toggleMessage }) => {
   const [not, setNot] = useState(false);
   const [img,setImg]=useState(false);
+  const menuRef = useRef(null);
+  const menuRef2=useRef(null);
 
   const notChange = () => {
     setNot(!not);
     setImg(false);
   };
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setImg(false);
+    }
+  };
+
+  const handleClickOutside2=(event)=>{
+    if(menuRef2.current && !menuRef2.current.contains(event.target)){
+      setNot(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside2);
+  
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside2);
+    };
+  }, []);
+  
 
   return (
     <div className="navbarContainer container">
@@ -75,7 +100,7 @@ const Navbar = ({ toggleSetting , toggleMessage }) => {
         <div className="notivicationIcon">
           <i className="fa-regular fa-bell" onClick={notChange}></i>
         </div>
-        <div className={`notovication ${not ? "active" : ""}`}>
+        <div className={`notovication ${not ? "active" : ""}`} ref={menuRef2}>
           <div className="headNot">
             <div className="sub-headNot">
               <h3>Notification</h3>
@@ -90,7 +115,7 @@ const Navbar = ({ toggleSetting , toggleMessage }) => {
 
           {Noti && Noti.length > 0 ? (
             Noti.map((item) => (
-              <div className="notification-content" key={item.id}>
+              <div className="notification-content" key={item.id} >
                 <img src={item.img} alt="Notification" />
                 <p>{item.description}</p>
                 <span>{item.time}</span>
@@ -115,7 +140,7 @@ const Navbar = ({ toggleSetting , toggleMessage }) => {
         <img src={mainPhoto} alt="userImg" />
           {
             img && (
-              <div className="userSection">
+              <div className="userSection" ref={menuRef}>
                 
                 <div className="head-user">
                    <img src={mainPhoto} alt="userImg"/>

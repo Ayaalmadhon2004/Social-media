@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import './header.css';
 import natureImg from '../Assets/santa-maddalena-dolomites-rangesouth-tyrol.jpg';
 import personalImg from '../Assets/Images/01-person2.jpg';
-import story1 from '../Assets/Images/05-B6qRKeDi.jpg';
+import story1 from '../Assets/Images/beautiful-collage-travel-concept.jpg';
 import story2 from '../Assets/Images/05-Ctvi5fKK.jpg';
-import story3 from '../Assets/Images/07-DLMl_mTI.jpg';
-import story4 from '../Assets/Images/05-B6qRKeDi.jpg';
+import story3 from '../Assets/Images/modern-smartphone-with-live-abstract-wallpaper-coming-out-screen.jpg';
+import story4 from '../Assets/Images/open-book-beautiful-setting.jpg';
 import mainPhoto from "../Assets/Images/01-person2.jpg";
 import graduated from "../Assets/Images/image1_0.jpg";
 import messageUsers from '../data/data';
@@ -59,7 +59,7 @@ const Header = React.memo(() => {
 
     switch (idx) {
       case 1:
-        setPhoto(!photo);
+        setPhoto(true);
         break;
       case 2:
         setVideo(!video);
@@ -107,7 +107,7 @@ const Header = React.memo(() => {
   ];
 
   return (
-    <div className="headerContainer container">
+    <div className={`container headerContainer`}>
       <div className="header3sections">
         <div className="leftHead">
           <img className="background" src={natureImg} alt="nature background" />
@@ -161,20 +161,26 @@ const Header = React.memo(() => {
             <div className="media">
               {media.map((media) => (
                 <div key={media.idx} className='PostSharing'>
-                  <div className="mediaIcons" onClick={() => handleMediaClick(media.idx)}>
+
+                  <div className="mediaIcons" onClick={() => 
+                     handleMediaClick(media.idx) }>
                     <i className={media.img}></i>
                     <p>{media.name}</p>
                   </div>
+                 
 
-                  {photo && media.idx === 1 && (
-                    <div className={`photoSection ${close?"active":""}`}>
+                 {
+                  /** make it better but later  */
+                  /**
+                   {photo && media.idx === 1 && (
+                    <div className={` photoSection ${close?"active":""}`}>
                       <div className="photo">
                         {postsDetails.map((postImg) => (
-                          <div key={postImg.index}>
-                            <div className="head">
-                              <p>{postImg.head}</p>
-                              <i className="fa-solid fa-xmark" onClick={closeChange}></i>
-                            </div>
+                          <div key={postImg.index} >
+                              <div className="head">
+                              <h3>{postImg.head}</h3>
+                              <i className="fa-solid fa-xmark" onClick={() => { closeChange() }} ></i>
+                              </div>
                             <div className="thoughts">
                               
                               <div className="textPost">
@@ -200,27 +206,61 @@ const Header = React.memo(() => {
 
                   {video && media.idx === 2 && (
                     <div className="videoSection">
-                      <div className="video">
-                        {postsDetails.map((postImg) => (
-                          <div key={postImg.index}>
-                            <div className="head">
-                              <p>{postImg.head}</p>
-                              <i className="fa-solid fa-xmark" onClick={closeChange}></i>
+                      <div className={` video ${close?"active":""}`}>
+                      {postsDetails.map((postImg) => (
+                          <div key={postImg.index} >
+                              <div className="head">
+                              <h3>{postImg.head}</h3>
+                              <i className="fa-solid fa-xmark" onClick={() => { closeChange() }} ></i>
+                              </div>
+                            <div className="thoughts">
+                              
+                              <div className="textPost">
+                              <img src={mainPhoto} alt="personal-img"/>
+                              <textarea placeholder='share your thoughts'></textarea>
+                              </div>
+
+                               <div className="image-upload">
+                                <h3>Upload attachment</h3>
+                                <input type="file" id="upload" accept='image/*' onChange={handleChange} />
+                               </div>
+
+                               <div className="btns">
+                                <div className="btn-red">Cancel</div>
+                                <div className="btn-green">Post</div>
+                               </div>
                             </div>
                           </div>
-                        ))}
+                      ))}
                       </div>
                     </div>
                   )}
 
                   {event && media.idx === 3 && (
                     <div className="eventSection">
-                      <div className="event">
-                        {postsDetails.map((postImg) => (
-                          <div key={postImg.index}>
-                            <div className="head">
-                              <p>{postImg.head}</p>
-                              <i className="fa-solid fa-xmark" onClick={closeChange}></i>
+                      <div className={` event ${close?"active":""}`}>
+                      {postsDetails.map((postImg) => (
+                          <div key={postImg.index} >
+                              <div className="head">
+                              <h3>{postImg.head}</h3>
+                              <i className="fa-solid fa-xmark" onClick={() => { closeChange() }} ></i>
+                              </div>
+                            <div className="thoughts">
+                              
+                              <div className="textPost">
+                              <img src={mainPhoto} alt="personal-img"/>
+                              <textarea placeholder='share your thoughts'></textarea>
+                              </div>
+
+                               <div className="image-upload">
+                                <h3>Upload attachment</h3>
+                                <input type="file" id="upload" accept='image/*' onChange={handleChange} />
+                               </div>
+
+                               <div className="btns">
+                                <div className="btn-red">Cancel</div>
+                                <div className="btn-green">Post</div>
+                               </div>
                             </div>
                           </div>
                         ))}
@@ -230,18 +270,37 @@ const Header = React.memo(() => {
 
                   {feeling && media.idx === 4 && (
                     <div className="feelingSection">
-                      <div className="feeling">
-                        {postsDetails.map((postImg) => (
-                          <div key={postImg.index}>
-                            <div className="head">
-                              <p>{postImg.head}</p>
-                              <i className="fa-solid fa-xmark" onClick={closeChange}></i>
+                      <div className={` feeling ${close?"active":""}`}>
+                      {postsDetails.map((postImg) => (
+                          <div key={postImg.index} >
+                              <div className="head">
+                              <h3>{postImg.head}</h3>
+                              <i className="fa-solid fa-xmark" onClick={() => { closeChange() }} ></i>
+                              </div>
+                            <div className="thoughts">
+                              
+                              <div className="textPost">
+                              <img src={mainPhoto} alt="personal-img"/>
+                              <textarea placeholder='share your thoughts'></textarea>
+                              </div>
+
+                               <div className="image-upload">
+                                <h3>Upload attachment</h3>
+                                <input type="file" id="upload" accept='image/*' onChange={handleChange} />
+                               </div>
+
+                               <div className="btns">
+                                <div className="btn-red">Cancel</div>
+                                <div className="btn-green">Post</div>
+                               </div>
                             </div>
                           </div>
                         ))}
                       </div>
                     </div>
                   )}
+                   */
+                 }
                 </div>
               ))}
             </div>
@@ -249,8 +308,10 @@ const Header = React.memo(() => {
           <div className="personalPost1">
             <div className="head">
               <img src={mainPhoto} alt="personal-img"/>
-              <p>Sam lanson</p>
-              <span>2 hours</span>
+              <div>
+                <h3>Sam lanson</h3>
+                <span>2 hours</span>
+              </div>
             </div>
             <div className="details">
               <p>I'm thrilled to share that I've completed a graduate certificate course in project management with the president's honor roll.</p>
@@ -291,24 +352,7 @@ const Header = React.memo(() => {
               </div>
             </div>
           </div>
-          <div className="personalPost2">
-            <div className="head">
-              <img src={personalImg} alt="main photo"/>
-              <h3>Lora Ali</h3>
-              <span>1 hours</span>
-            </div>
-            <div className="details">
-             <p>I'm thrilled to share that I've completed a graduate certificate course in project management with the president's honor roll.</p>
-              <img src={story2} alt="post2"/>
-            </div>
-            <div className="interactions">
-            <div className='interactionContainer'>
-              <span><i class="fa-solid fa-thumbs-up"></i> liked(56)</span>
-              <span><i class="fa-solid fa-comment"></i> commented(23)</span>
-              <span className='share'><i class="fa-solid fa-share"></i> share(2)</span>
-            </div>
-            </div>
-          </div>
+          <div className="spaceCenterHeader"></div>
         </div>
         <div className="rightHead">
           <div className="followSection">

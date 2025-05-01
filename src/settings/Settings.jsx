@@ -1,16 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import "./settings.css"
-import { useNavigate } from 'react-router'
+import { useLocation } from 'react-router';
 
 const Settings = ({setting}) => {
-  const navigate=useNavigate();
-
-  useEffect(()=>{
-    if(!setting) navigate("/header");
-  },[setting,navigate]);
+  const location = useLocation();
   
   return (
-    <div className={`settingsContainer container ${setting ? "active":""}`}>
+    <div className={`settingsContainer container ${(setting || location.pathname === "/settings") ? "active":""}`}>
        <div className="setting2Sections">
        <div className="leftSetting">
         <div className="topLeftSetting">

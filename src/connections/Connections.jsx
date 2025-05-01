@@ -23,7 +23,7 @@ const Connections = () => {
           {
             messageUsers.map((connection)=>(
               <div className="sub-connections" key={Connections.id}>
-                 <img src={connection.img} alt=""/>
+                 <img src={connection.img} alt="" className='imging'/>
                  <div className="details">
                   <div className="right">
                    <div className='jobName'>

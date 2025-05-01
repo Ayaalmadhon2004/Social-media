@@ -18,34 +18,29 @@ const App = () => {
   const location = useLocation();
 
   const toggleSetting = () => {
-    setSetting((prev) => !prev);
+    setSetting(true);
     setMessage(false);
   };
 
   const toggleMessage = () => {
-    setMessage((prev) => !prev);
+    setMessage(true);
     setSetting(false);
   };
-
-  {/* events in header 
-      setting and message in navbar 
-      activity part
-    */}
 
   return (
     <div>
       <Navbar toggleSetting={toggleSetting} toggleMessage={toggleMessage} />
       
-      {(!location.pathname.includes("/settings") && 
-      !location.pathname.includes("/messages") && 
-      !location.pathname.includes("/profile")) && 
-      !location.pathname.includes("/HelpCenter") &&
-      <Header />}
+      {!location.pathname.includes("/settings") &&
+      !location.pathname.includes("/messages")&& 
+      !location.pathname.includes("/profile")&& 
+      !location.pathname.includes("/HelpCenter")
+      }
 
       <Routes>
-        <Route path="/settings" element={<Settings setting={setting} />} />
+        <Route path="/settings" element={<Settings setting={setting} />} /> 
         <Route path="/messages" element={<MessagingSection message={message} />} />
-        <Route path="/HelpCenter" element={<HelpCenter/>}></Route>
+        <Route path="/HelpCenter" element={<HelpCenter/>}/>
         <Route path="/question/:id" element={<HelpCenter />} />
 
         <Route path="/profile" element={<Profile />}>
@@ -55,6 +50,8 @@ const App = () => {
           <Route path="Events" element={<Events/>} />
           <Route path="Activity" element={<Activity/>} /> 
         </Route>
+
+        <Route path="/header" element={<Header/>}/>
       </Routes>
     </div>
   );

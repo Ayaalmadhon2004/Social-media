@@ -1,0 +1,40 @@
+.activity{
+    background-color:var(--white);
+    padding:1rem;
+    border-radius:10px;
+}
+.activity .header h3{
+    color: var(--blue);
+    font-weight: 900;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.activity-content{
+    display:flex;
+    align-items: center;
+    gap:2rem;
+    width:800px;
+    flex-wrap: wrap;;
+}
+.activity-content li{
+    width:200px;
+    align-items: center;
+    justify-content: center;
+}
+.activity-content img{
+    width:100px;
+    border-radius:50%;
+    margin-left:3rem;
+}
+.acitvity-item p{
+    color:var(--dark-gray);
+    text-align:center;
+    margin-top:0;
+}
+.activity-time p{
+    color:var(--blue);
+    font-weight: 500;
+    margin-top:0;
+}

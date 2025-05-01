@@ -37,7 +37,7 @@ a{
 .blue-btn{
   color:var(--blue);
   background-color: var(--light-blue);
-  padding:.5rem;
+  padding:1rem;
   font-weight: 600;
   cursor:pointer;
   border:none;
@@ -62,8 +62,10 @@ a{
 }
 .btn-red{
   color:var(--red);
+  align-items: center;
+  justify-content: center;
   background-color:var(--light-red);
-  padding:.5rem;
+  padding:1rem;
   font-weight: 600;
   cursor:pointer;
   border:none;
